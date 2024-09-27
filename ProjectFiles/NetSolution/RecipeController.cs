@@ -55,6 +55,26 @@ public class RecipeController : BaseNetLogic
         SelectFromDBTrigger = LogicObject.GetVariable("SelectFromDBTrigger");
         if (SelectFromDBTrigger != null)
             variableSynchronizer.Add(SelectFromDBTrigger);
+        
+        EditModelChanged = LogicObject.GetVariable("EditModelChanged");
+        ListenToEditModelChanges();
+    }
+
+    private void ListenToEditModelChanges()
+    {
+        RecipeSchema schema = GetRecipeSchema();
+        if (schema == null) return;
+        var editModelNode = schema.GetObject("EditModel");
+        if (editModelNode == null) return;
+        foreach (IUAVariable item in editModelNode.Children)
+        {
+            item.VariableChange += ToggleEditModelChanged;
+        }
+    }
+
+    private void ToggleEditModelChanged(object sender, VariableChangeEventArgs e)
+    {
+        EditModelChanged.Value = !EditModelChanged.Value;
     }
 
     public override void Stop()
@@ -1121,4 +1141,6 @@ public class RecipeController : BaseNetLogic
     private IUAVariable LoadFromPLCTrigger;
     private IUAVariable SaveToDBTrigger;
     private IUAVariable SelectFromDBTrigger;
+
+    public IUAVariable EditModelChanged { get; private set; }
 }
