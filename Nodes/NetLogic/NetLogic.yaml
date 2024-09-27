@@ -1,0 +1,285 @@
+Name: NetLogic
+Type: NetLogicCategoryFolder
+Children:
+- Name: RecipeController
+  Type: NetLogic
+  Children:
+  - Name: Result
+    Type: BaseDataVariableType
+    DataType: Byte
+    AccessLevel: Read
+  - Name: Message
+    Type: BaseDataVariableType
+    DataType: String
+    AccessLevel: Read
+  - Name: LastAppliedRecipe
+    Type: BaseDataVariableType
+    DataType: String
+    AccessLevel: Read
+  - Name: RecipeSchema
+    Type: NodePointer
+    DataType: NodeId
+    Value: "/Objects/DEG_demo_2_recipes/Recipes/RecipeSchema1"
+    Children:
+    - Name: Kind
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/ObjectTypes/BaseObjectType/RecipeSchema"
+  - Name: CSVFile
+    Type: BaseDataVariableType
+    DataType: AbsoluteResourceUri
+  - Name: CSVSeparator
+    Type: BaseDataVariableType
+    DataType: String
+    Value: ","
+  - Name: WrapFields
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Class: Method
+    Name: Delete
+    Children:
+    - Name: ns=0;InputArguments
+      Type: BaseVariableType
+      DataType: Argument
+      ReferenceType: HasProperty
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"RecipeName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+  - Class: Method
+    Name: Export
+  - Class: Method
+    Name: Import
+  - Class: Method
+    Name: ApplyFromDB
+    Children:
+    - Name: ns=0;InputArguments
+      Type: BaseVariableType
+      DataType: Argument
+      ReferenceType: HasProperty
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"RecipeName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+  - Class: Method
+    Name: ApplyFromEditModel
+    Children:
+    - Name: ns=0;InputArguments
+      Type: BaseVariableType
+      DataType: Argument
+      ReferenceType: HasProperty
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+  - Class: Method
+    Name: LoadFromPLC
+    Children:
+    - Name: ns=0;InputArguments
+      Type: BaseVariableType
+      DataType: Argument
+      ReferenceType: HasProperty
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+  - Class: Method
+    Name: SaveToDB
+    Children:
+    - Name: ns=0;InputArguments
+      Type: BaseVariableType
+      DataType: Argument
+      ReferenceType: HasProperty
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"RecipeName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+  - Class: Method
+    Name: SelectFromDB
+    Children:
+    - Name: ns=0;InputArguments
+      Type: BaseVariableType
+      DataType: Argument
+      ReferenceType: HasProperty
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"RecipeName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":296},"Body":{"Name":"ErrorPolicy","DataType":{"Id":40,"Namespace":15},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+  - Name: RecipeName
+    Id: g=920750de023790e1c7815f92ce6a932f
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: ErrorPolicy
+    Type: BaseDataVariableType
+    DataType: CopyErrorPolicy
+  - Name: ApplyFromDBTrigger
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ApplyFromEditModelTrigger
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: DeleteTrigger
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ExportTrigger
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ImportTrigger
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: LoadFromPLCTrigger
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: SaveToDBTrigger
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: SelectFromDBTrigger
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: RecipeControllerCreatedAndSaved
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipeControllerCreatedAndSaved"}
+  - Name: RecipeControllerDeleted
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipeControllerDeleted"}
+  - Name: RecipeControllerEmptyRecipeName
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipeControllerEmptyRecipeName"}
+  - Name: RecipeControllerRecipe
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipeControllerRecipe"}
+  - Name: RecipeControllerRecipeApplied
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipeControllerRecipeApplied"}
+  - Name: RecipeControllerRecipeLoaded
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipeControllerRecipeLoaded"}
+  - Name: RecipeControllerSaved
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipeControllerSaved"}
+  - Name: RecipesEditorRecipeSchemaNotFound
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorRecipeSchemaNotFound"}
+  - Name: RecipesEditorRecipeSchemaNotSet
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorRecipeSchemaNotSet"}
+  - Name: RecipesEditorRecipeNotFound
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorRecipeNotFound"}
+  - Name: RecipesEditorNotARecipe
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorNotARecipe"}
+  - Name: RecipesEditorStoreOfSchema
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorStoreOfSchema"}
+  - Name: RecipesEditorNotSet
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorNotSet"}
+  - Name: RecipesEditorStore
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorStore"}
+  - Name: RecipesEditorNotFound
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorNotFound"}
+  - Name: RecipesEditorNotAStore
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorNotAStore"}
+  - Name: RecipesEditorEditModelOfSchema
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    AccessLevel: Read
+    Value: {"NamespaceIndex":24,"TextId":"RecipesEditorEditModelOfSchema"}
+  - Class: Method
+    Name: ResetEditModel
+    Children:
+    - Name: ns=0;InputArguments
+      Type: BaseVariableType
+      DataType: Argument
+      ReferenceType: HasProperty
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"editModelId","DataType":{"Id":17},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+- Name: EmailSenderLogic
+  Type: NetLogic
+  WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
+  Children:
+  - Class: Method
+    Name: SendEmail
+    Children:
+    - Name: ns=0;InputArguments
+      Type: BaseVariableType
+      DataType: Argument
+      ReferenceType: HasProperty
+      ValueRank: OneDimension
+      ArrayDimensions: [0]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"mailToAddress","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":296},"Body":{"Name":"mailSubject","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":296},"Body":{"Name":"mailBody","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+  - Name: SenderEmailAddress
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: SenderEmailPassword
+    Type: BaseDataVariableType
+    DataType: Password
+  - Name: SMTPHostname
+    Type: BaseDataVariableType
+    DataType: String
+  - Name: SMTPPort
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: EnableSSL
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Attachment
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+  - Name: MaxRetriesOnFailure
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: DelayBeforeRetry
+    Type: BaseDataVariableType
+    DataType: Duration
+    Value: "0:00:00:10.0000000"
+  - Name: EmailSendingStatus
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: ns=13;LibraryReference
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 13
+      },
+      "Body": {
+       "libraryGuid": "f0701375ee41467993d632db6a8fdaa5",
+       "objectGuid": "bce2e18626fafec33b8147df15fe6d2a",
+       "objectVersion": 1,
+       "highestIgnoredVersion": 0
+      }
+     }
